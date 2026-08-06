@@ -87,4 +87,5 @@ export const projects: Project[] = [
   },
 ];
 
-export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
+export const featuredProject: Project =
+  projects.find((p) => p.featured) ?? projects[0]!;
