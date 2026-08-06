@@ -100,7 +100,7 @@ export default function NeuralScene() {
       camera={{ position: [0, 0, 5.2], fov: 45 }}
       dpr={[1, 1.8]}
       gl={{ antialias: true, alpha: true }}
-￼    >
+    >
       <ambientLight intensity={0.5} />
       <pointLight position={[4, 4, 4]} intensity={60} color="#3B82F6" />
       <pointLight position={[-4, -2, 2]} intensity={35} color="#6366F1" />
