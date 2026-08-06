@@ -4,7 +4,7 @@ import { roles } from "@/data/site";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 
-const icons = [Bot, Workflow, MessagesSquare, Plug, Compass];
+const icons = [Bot, Workflow, MessagesSquare, Plug, Compass] as const;
 
 export function About() {
   return (
@@ -18,7 +18,7 @@ export function About() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {roles.map((role, i) => {
-            const Icon = icons[i % icons.length];
+            const Icon = icons[i % icons.length]!;
             return (
               <Reveal key={role.title} delay={i * 0.08}>
                 <motion.article
