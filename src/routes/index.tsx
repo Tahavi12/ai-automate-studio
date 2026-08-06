@@ -1,24 +1,82 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import { AmbientBackground } from "@/components/AmbientBackground";
+import { Navbar } from "@/components/sections/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Skills } from "@/components/sections/Skills";
+import { Services } from "@/components/sections/Services";
+import { Portfolio } from "@/components/sections/Portfolio";
+import { FeaturedProject } from "@/components/sections/FeaturedProject";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Process } from "@/components/sections/Process";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "MD Tahabi Shahriar — AI Automation Developer";
+const description =
+  "AI automation developer building chatbots, n8n workflows, API integrations and custom AI agents that save businesses time and money.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "MD Tahabi Shahriar",
+          jobTitle: "AI Automation Developer",
+          description,
+          knowsAbout: [
+            "AI Automation",
+            "n8n",
+            "OpenAI",
+            "Chatbots",
+            "API Integration",
+            "Make.com",
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="relative min-h-screen overflow-x-clip"
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+      <AmbientBackground />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Services />
+        <Portfolio />
+        <FeaturedProject />
+        <Testimonials />
+        <Process />
+        <Contact />
+      </main>
+      <Footer />
+    </motion.div>
   );
 }
