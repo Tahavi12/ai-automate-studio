@@ -2,7 +2,7 @@ export const site = {
   name: "Md Tahavi Shahriar",
   role: "AI Automation Developer",
   email: "hello@tahabishahriar.com",
-  fiverrMessage: "https://www.fiverr.com/inbox/new",
+  fiverrMessage: "https://www.fiverr.com/",
   socials: {
     github: "https://github.com",
     linkedin: "https://www.linkedin.com",
