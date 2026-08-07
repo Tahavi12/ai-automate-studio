@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, ExternalLink, X, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, X, CheckCircle2 } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -57,14 +57,6 @@ export function Portfolio() {
                   </ul>
 
                   <div className="mt-6 flex flex-wrap gap-3 pt-1">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-4 py-2.5 text-xs font-semibold transition-transform hover:scale-105"
-                    >
-                      Live Demo <ExternalLink className="size-3.5" />
-                    </a>
                     <button
                       onClick={() => setActive(project)}
                       className="inline-flex items-center gap-2 rounded-xl border border-glass-border bg-glass px-4 py-2.5 text-xs font-semibold transition-colors hover:border-accent/50 hover:text-accent"
@@ -151,15 +143,6 @@ export function Portfolio() {
                     </ul>
                   </div>
                 </div>
-
-                <a
-                  href={active.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-5 py-3 text-sm font-semibold transition-transform hover:scale-105"
-                >
-                  Live Demo <ExternalLink className="size-4" />
-                </a>
               </div>
             </motion.div>
           </motion.div>

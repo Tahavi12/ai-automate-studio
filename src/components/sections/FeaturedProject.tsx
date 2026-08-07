@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ExternalLink } from "lucide-react";
+import { Check } from "lucide-react";
 import { featuredProject } from "@/data/projects";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -50,15 +50,6 @@ export function FeaturedProject() {
                     </motion.li>
                   ))}
                 </ul>
-
-                <a
-                  href={featuredProject.demoUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-9 inline-flex items-center gap-2 rounded-xl bg-[image:var(--gradient-primary)] px-6 py-3.5 text-sm font-semibold shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
-                >
-                  See it live <ExternalLink className="size-4" />
-                </a>
               </div>
 
               <motion.div

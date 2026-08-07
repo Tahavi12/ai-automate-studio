@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { site } from "@/data/site";
+import portrait from "@/assets/portrait-photo.png.asset.json";
 
 const links = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#services", label: "Services" },
   { href: "#portfolio", label: "Portfolio" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -38,11 +37,15 @@ export function Navbar() {
         }`}
       >
         <a href="#top" className="flex items-center gap-2.5">
-          <span className="grid size-8 place-items-center rounded-xl bg-[image:var(--gradient-primary)] text-sm font-bold">
-            T
-          </span>
+          <img
+            src={portrait.url}
+            alt="Md Tahavi Shahriar"
+            width={64}
+            height={64}
+            className="size-8 rounded-full border border-glass-border object-cover"
+          />
           <span className="font-display text-sm font-semibold tracking-tight">
-            Tahabi<span className="text-primary">.</span>
+            Md Tahavi Shahriar<span className="text-primary">.</span>
           </span>
         </a>
 
@@ -61,12 +64,12 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href={site.socials.fiverr}
+            href={site.fiverrMessage}
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-xl bg-[image:var(--gradient-primary)] px-4 py-2 text-sm font-medium shadow-[var(--shadow-glow)] transition-transform hover:scale-105 sm:inline-flex"
           >
-            Hire Me
+            Message Me
           </a>
           <button
             aria-label="Toggle menu"

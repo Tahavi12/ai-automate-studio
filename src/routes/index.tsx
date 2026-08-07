@@ -8,12 +8,9 @@ import { Skills } from "@/components/sections/Skills";
 import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { FeaturedProject } from "@/components/sections/FeaturedProject";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { Process } from "@/components/sections/Process";
-import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 
-const title = "MD Tahabi Shahriar — AI Automation Developer";
+const title = "Md Tahavi Shahriar — AI Automation Developer";
 const description =
   "AI automation developer building chatbots, n8n workflows, API integrations and custom AI agents that save businesses time and money.";
 
@@ -38,7 +35,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "MD Tahabi Shahriar",
+          name: "Md Tahavi Shahriar",
           jobTitle: "AI Automation Developer",
           description,
           knowsAbout: [
@@ -72,9 +69,6 @@ function Index() {
         <Services />
         <Portfolio />
         <FeaturedProject />
-        <Testimonials />
-        <Process />
-        <Contact />
       </main>
       <Footer />
     </motion.div>

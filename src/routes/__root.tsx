@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MD Tahabi Shahriar — AI Automation Developer" },
+      { title: "Md Tahavi Shahriar — AI Automation Developer" },
       {
         name: "description",
         content:
           "AI automation developer building chatbots, n8n workflows and custom AI agents for businesses.",
       },
-      { name: "author", content: "MD Tahabi Shahriar" },
-      { property: "og:site_name", content: "MD Tahabi Shahriar" },
+      { name: "author", content: "Md Tahavi Shahriar" },
+      { property: "og:site_name", content: "Md Tahavi Shahriar" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
