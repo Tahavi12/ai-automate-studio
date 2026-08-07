@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ClientOnly } from "@tanstack/react-router";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
-import portrait from "@/assets/portrait.jpg";
+import { ArrowRight, Zap } from "lucide-react";
+import portrait from "@/assets/portrait-photo.png.asset.json";
 import { site } from "@/data/site";
 
 const NeuralScene = lazy(() => import("@/components/three/NeuralScene"));
@@ -21,24 +21,14 @@ export function Hero() {
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 rounded-full border border-glass-border bg-glass px-4 py-1.5 text-xs text-muted-foreground"
-          >
-            <Sparkles className="size-3.5 text-accent" />
-            Available for new automation projects
-          </motion.span>
-
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-6 text-4xl leading-[1.05] font-bold text-balance sm:text-5xl lg:text-6xl"
+            className="text-4xl leading-[1.05] font-bold text-balance sm:text-5xl lg:text-6xl"
           >
             Hi, I&apos;m{" "}
-            <span className="text-gradient">MD Tahabi Shahriar</span>
+            <span className="text-gradient">Md Tahavi Shahriar</span>
             <span className="mt-3 block text-2xl font-semibold text-muted-foreground sm:text-3xl">
               AI Automation Developer
             </span>
@@ -72,13 +62,13 @@ export function Hero() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={site.socials.fiverr}
+              href={site.fiverrMessage}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-glass-border bg-glass px-6 py-3.5 text-sm font-semibold backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent"
             >
               <Zap className="size-4" />
-              Hire Me on Fiverr
+              Message Me on Fiverr
             </a>
           </motion.div>
 
@@ -124,8 +114,8 @@ export function Hero() {
             <div className="absolute -inset-px rounded-[calc(var(--radius)+12px)] bg-[conic-gradient(from_0deg,transparent_0%,var(--color-primary)_25%,transparent_50%,var(--color-secondary)_75%,transparent_100%)] opacity-70 animate-spin-slow" />
             <div className="glass-card relative overflow-hidden rounded-[calc(var(--radius)+12px)] p-2 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-glow)]">
               <img
-                src={portrait}
-                alt="MD Tahabi Shahriar, AI Automation Developer"
+                src={portrait.url}
+                alt="Md Tahavi Shahriar, AI Automation Developer"
                 width={896}
                 height={1152}
                 className="w-full rounded-[calc(var(--radius)+4px)] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
@@ -133,7 +123,7 @@ export function Hero() {
               <div className="pointer-events-none absolute inset-2 rounded-[calc(var(--radius)+4px)] bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
               <div className="pointer-events-none absolute inset-x-2 bottom-2 rounded-b-[calc(var(--radius)+4px)] bg-gradient-to-t from-background/90 to-transparent p-4 pt-14">
                 <p className="font-display text-sm font-semibold">
-                  MD Tahabi Shahriar
+                  Md Tahavi Shahriar
                 </p>
                 <p className="text-xs text-muted-foreground">
                   AI Automation &amp; Workflow Developer

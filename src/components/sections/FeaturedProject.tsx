@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, ExternalLink } from "lucide-react";
+import { Check } from "lucide-react";
 import { featuredProject } from "@/data/projects";
 import { Reveal } from "@/components/ui/reveal";
 
