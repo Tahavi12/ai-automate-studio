@@ -6,6 +6,7 @@ import portrait from "@/assets/portrait-photo.png.asset.json";
 import { site } from "@/data/site";
 
 const NeuralScene = lazy(() => import("@/components/three/NeuralScene"));
+const SplineScene = lazy(() => import("@/components/three/SplineScene"));
 
 const stats = [
   { value: "60+", label: "Automations shipped" },
@@ -19,8 +20,26 @@ export function Hero() {
       id="top"
       className="relative flex min-h-screen items-center px-4 pt-32 pb-20"
     >
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-60">
+        <ClientOnly fallback={null}>
+          <Suspense fallback={null}>
+            <SplineScene />
+          </Suspense>
+        </ClientOnly>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
+      </div>
       <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-glass-border bg-glass px-4 py-1.5 text-xs font-semibold tracking-wide text-accent uppercase backdrop-blur-md"
+          >
+            <Zap className="size-3.5" />
+            AI Automation Specialist
+          </motion.span>
+
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
