@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { site } from "@/data/site";
+import { whatsappLink } from "@/lib/contact";
 import portrait from "@/assets/portrait-photo.png.asset.json";
 
 const links = [
@@ -64,7 +64,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <a
-            href={site.fiverrMessage}
+            href={whatsappLink}
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-xl bg-[image:var(--gradient-primary)] px-4 py-2 text-sm font-medium shadow-[var(--shadow-glow)] transition-transform hover:scale-105 sm:inline-flex"

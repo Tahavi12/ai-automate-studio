@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
+import { createFileRoute, ClientOnly } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { AmbientBackground } from "@/components/AmbientBackground";
 import { Navbar } from "@/components/sections/Navbar";
@@ -9,6 +10,8 @@ import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { FeaturedProject } from "@/components/sections/FeaturedProject";
 import { Footer } from "@/components/sections/Footer";
+
+const ChatWidget = lazy(() => import("@/components/ChatWidget"));
 
 const title = "Md Tahavi Shahriar — AI Automation Developer";
 const description =
@@ -71,6 +74,11 @@ function Index() {
         <FeaturedProject />
       </main>
       <Footer />
+      <ClientOnly fallback={null}>
+        <Suspense fallback={null}>
+          <ChatWidget />
+        </Suspense>
+      </ClientOnly>
     </motion.div>
   );
 }
