@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { whatsappLink } from "@/lib/contact";
-import portrait from "@/assets/portrait-photo.png.asset.json";
+import portrait from "@/assets/portrait-cutout.png";
 
 const links = [
   { href: "#about", label: "About" },
@@ -38,7 +38,7 @@ export function Navbar() {
       >
         <a href="#top" className="flex items-center gap-2.5">
           <img
-            src={portrait.url}
+            src={portrait}
             alt="Md Tahavi Shahriar"
             width={64}
             height={64}

@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ClientOnly } from "@tanstack/react-router";
 import { ArrowRight, Zap } from "lucide-react";
-import portrait from "@/assets/portrait-photo.png.asset.json";
+import portrait from "@/assets/portrait-cutout.png";
 import { whatsappLink } from "@/lib/contact";
 
 const NeuralScene = lazy(() => import("@/components/three/NeuralScene"));
@@ -44,7 +44,7 @@ export function Hero() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_70%,var(--color-background)_100%)]" />
       </div>
 
-      <div className="relative z-[2] mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="pointer-events-none relative z-[2] mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="pointer-events-none">
           <h1 className="sr-only">
             Md Tahavi Shahriar — AI Automation Developer
@@ -101,16 +101,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.35 }}
-            className="group pointer-events-auto relative z-[3] mx-auto -mt-10 w-full max-w-sm animate-float"
+            className="group pointer-events-auto relative z-[3] mx-auto mt-2 w-full max-w-[19rem] sm:max-w-xs animate-float lg:translate-x-10 lg:translate-y-6 xl:translate-x-20"
           >
             <div className="absolute -inset-px rounded-[calc(var(--radius)+12px)] bg-[conic-gradient(from_0deg,transparent_0%,var(--color-primary)_25%,transparent_50%,var(--color-secondary)_75%,transparent_100%)] opacity-70 animate-spin-slow" />
             <div className="glass-card relative overflow-hidden rounded-[calc(var(--radius)+12px)] p-2 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-glow)]">
+              <div className="pointer-events-none absolute inset-2 rounded-[calc(var(--radius)+4px)] bg-[radial-gradient(circle_at_50%_35%,oklch(0.623_0.214_259.8/35%),transparent_70%)]" />
               <img
-                src={portrait.url}
+                src={portrait}
                 alt="Md Tahavi Shahriar, AI Automation Developer"
-                width={896}
-                height={1152}
-                className="w-full rounded-[calc(var(--radius)+4px)] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                width={1254}
+                height={1254}
+                className="relative w-full rounded-[calc(var(--radius)+4px)] object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
               />
               <div className="pointer-events-none absolute inset-2 rounded-[calc(var(--radius)+4px)] bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
               <div className="pointer-events-none absolute inset-x-2 bottom-2 rounded-b-[calc(var(--radius)+4px)] bg-gradient-to-t from-background/90 to-transparent p-4 pt-14">
