@@ -20,6 +20,20 @@ export function Hero() {
       id="top"
       className="relative flex min-h-screen items-center overflow-hidden px-4 pt-32 pb-20"
     >
+      {/* Animation 1 — globe / neural network, back layer */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="pointer-events-none absolute top-[30%] right-[4%] z-0 h-[220px] w-[min(28rem,60vw)] sm:h-[280px]"
+      >
+        <ClientOnly fallback={null}>
+          <Suspense fallback={null}>
+            <NeuralScene />
+          </Suspense>
+        </ClientOnly>
+      </motion.div>
+
       {/* Animation 2 — full-screen Spline scene, in front of the globe */}
       <div className="absolute inset-0 z-[1]">
         <ClientOnly fallback={null}>
@@ -82,19 +96,7 @@ export function Hero() {
         <div className="pointer-events-none relative">
           <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-primary/15 blur-[100px]" />
 
-          {/* Animation 1 — globe / neural network, behind everything */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative -z-10 mx-auto h-[220px] w-full max-w-md sm:h-[280px]"
-          >
-            <ClientOnly fallback={null}>
-              <Suspense fallback={null}>
-                <NeuralScene />
-              </Suspense>
-            </ClientOnly>
-          </motion.div>
+          <div className="mx-auto h-[220px] w-full max-w-md sm:h-[280px]" />
 
           <motion.div
             initial={{ opacity: 0, y: 40 }}
