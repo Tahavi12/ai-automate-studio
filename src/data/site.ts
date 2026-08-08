@@ -2,7 +2,11 @@ export const site = {
   name: "Md Tahavi Shahriar",
   role: "AI Automation Developer",
   email: "hello@tahabishahriar.com",
-  fiverrMessage: "https://www.fiverr.com/",
+  // Replace with your real WhatsApp number (country code, digits only)
+  whatsappNumber: "8801700000000",
+  whatsappMessage: "Hi Tahavi! I'd like to talk about an automation project.",
+  n8nChatWebhook:
+    "https://n8n.srv1106977.hstgr.cloud/webhook/8f238908-13ff-4b13-b403-d80826a90aa3/chat",
   socials: {
     github: "https://github.com",
     linkedin: "https://www.linkedin.com",
