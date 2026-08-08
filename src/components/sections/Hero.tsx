@@ -104,7 +104,7 @@ export function Hero() {
             className="group pointer-events-auto relative z-[3] mx-auto mt-2 w-full max-w-[19rem] sm:max-w-xs animate-float lg:translate-x-10 lg:translate-y-6 xl:translate-x-20"
           >
             <div className="absolute -inset-px rounded-[calc(var(--radius)+12px)] bg-[conic-gradient(from_0deg,transparent_0%,var(--color-primary)_25%,transparent_50%,var(--color-secondary)_75%,transparent_100%)] opacity-70 animate-spin-slow" />
-            <div className="glass-card relative overflow-hidden rounded-[calc(var(--radius)+12px)] bg-[image:var(--gradient-primary)]/10 p-2 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-glow)]">
+            <div className="glass-card relative overflow-hidden rounded-[calc(var(--radius)+12px)] p-2 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-glow)]">
               <div className="pointer-events-none absolute inset-2 rounded-[calc(var(--radius)+4px)] bg-[radial-gradient(circle_at_50%_35%,oklch(0.623_0.214_259.8/35%),transparent_70%)]" />
               <img
                 src={portrait}
