@@ -41,8 +41,7 @@ export function Hero() {
             <SplineScene />
           </Suspense>
         </ClientOnly>
-        <div className="pointer-events-none absolute inset-0 bg-background/25 mix-blend-multiply" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,var(--color-background)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_70%,var(--color-background)_100%)]" />
       </div>
 
       <div className="relative z-[2] mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
