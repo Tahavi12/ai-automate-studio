@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ClientOnly } from "@tanstack/react-router";
 import { ArrowRight, Zap } from "lucide-react";
 import portrait from "@/assets/portrait-photo.png.asset.json";
-import { site } from "@/data/site";
+import { whatsappLink } from "@/lib/contact";
 
 const NeuralScene = lazy(() => import("@/components/three/NeuralScene"));
 const SplineScene = lazy(() => import("@/components/three/SplineScene"));
@@ -18,31 +18,31 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center px-4 pt-32 pb-20"
+      className="relative flex min-h-screen items-center overflow-hidden px-4 pt-32 pb-20"
     >
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
+      {/* Animation 2 — full-screen Spline scene, in front of the globe */}
+      <div className="absolute inset-0 z-[1]">
+        <ClientOnly fallback={null}>
+          <Suspense fallback={null}>
+            <SplineScene />
+          </Suspense>
+        </ClientOnly>
+        <div className="pointer-events-none absolute inset-0 bg-background/25 mix-blend-multiply" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,var(--color-background)_100%)]" />
+      </div>
+
+      <div className="relative z-[2] mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="pointer-events-none">
           <h1 className="sr-only">
             Md Tahavi Shahriar — AI Automation Developer
           </h1>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[320px] w-full sm:h-[420px] lg:h-[480px]"
-          >
-            <ClientOnly fallback={null}>
-              <Suspense fallback={null}>
-                <SplineScene />
-              </Suspense>
-            </ClientOnly>
-          </motion.div>
+          <div className="h-[320px] w-full sm:h-[420px] lg:h-[480px]" />
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="mt-9 flex flex-wrap items-center gap-3"
+            className="pointer-events-auto mt-9 flex flex-wrap items-center gap-3"
           >
             <a
               href="#portfolio"
@@ -52,13 +52,13 @@ export function Hero() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={site.fiverrMessage}
+              href={whatsappLink}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-glass-border bg-glass px-6 py-3.5 text-sm font-semibold backdrop-blur-md transition-all hover:-translate-y-0.5 hover:border-accent/50 hover:text-accent"
             >
               <Zap className="size-4" />
-              Message Me on Fiverr
+              Message Me
             </a>
           </motion.div>
 
@@ -79,14 +79,15 @@ export function Hero() {
           </motion.dl>
         </div>
 
-        <div className="relative">
+        <div className="pointer-events-none relative">
           <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-primary/15 blur-[100px]" />
 
+          {/* Animation 1 — globe / neural network, behind everything */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative mx-auto h-[220px] w-full max-w-md sm:h-[280px]"
+            className="relative -z-10 mx-auto h-[220px] w-full max-w-md sm:h-[280px]"
           >
             <ClientOnly fallback={null}>
               <Suspense fallback={null}>
@@ -99,7 +100,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.35 }}
-            className="group relative mx-auto -mt-10 w-full max-w-sm animate-float"
+            className="group pointer-events-auto relative z-[3] mx-auto -mt-10 w-full max-w-sm animate-float"
           >
             <div className="absolute -inset-px rounded-[calc(var(--radius)+12px)] bg-[conic-gradient(from_0deg,transparent_0%,var(--color-primary)_25%,transparent_50%,var(--color-secondary)_75%,transparent_100%)] opacity-70 animate-spin-slow" />
             <div className="glass-card relative overflow-hidden rounded-[calc(var(--radius)+12px)] p-2 transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-[var(--shadow-glow)]">
